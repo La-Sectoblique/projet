@@ -5,3 +5,4 @@ Ce dépôt git contient un accès à tout les documents du projet de la Septobli
 ## Sommaire
 
 - [Documentation septoblique-service](http://doc.septotrip.com)
+- [Rapport de test](./test/Test.md)
