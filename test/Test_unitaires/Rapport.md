@@ -12,15 +12,21 @@ Nous avons fait le choix de tester les controlleurs, car il représente la quasi
 
 Plus spécifiquement, nous avons décidé de tester les controlleurs gérant les utilisateurs et les voyages. 
 
-## Quelles leçons en tirés ?
+## Quelles leçons en tirer ?
 
 Mettre en place ces tests unitaires nous a permis de mettre en valeur certains défauts de conception dans le code de ces controlleurs.  
 Par exemple, nous avons pu remarquer qu'aucune vérification n'était effectué sur la forme des informations rentrées en base (aucune verification sur si l'adresse mail est bien une adresse mail).  
 Nous avons également remarqué que certains codes d'erreurs renvoyés n'était pas les bons.
 
+## Quels bénéfices en tirer ? 
+
+L'avantage de `jest` est qu'il est très facile à intégrer dans un CI. Nous avons donc ajouter une Github Actions pour automatiquement lancer les tests unitaires depuis une CI.
+Désormais, des tests sont mis en place lorsqu'on ouvre un pull request vers notre branche `master`. Cela évite de mettre en production du code non fonctionnel qui casserait une fonctionnalité.
+
 ## Rapport de couverture du code par les tests
 
 ![](img/Jest-code-coverage.png)
+![](img/Jest-code-coverage-1.png)
 
 ## Code source 
 
