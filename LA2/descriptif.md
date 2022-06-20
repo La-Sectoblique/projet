@@ -20,8 +20,8 @@ Cette application utilise le framework `Angular`, car c'est le framework web ave
 ### 2. Application mobile
 
 L'application mobile de Septotrip est l'application qui va accompagner l'utilisateur au cours de son voyage. 
-Cette application utilise la librairie `React native`, afin de pouvoir faire l'application en `TypeScript` et de garder une cohérence avec les autres applications du projet, mais également car cette librairie nous permet d'avoir une base de code commune pour Android et iOS.
-De plus, beaucoup de librairies tierces sont disponible pour `React native`, ce qui facilite grandement le développement d'application complexe.
+Cette application utilise la librairie `React native`, en `TypeScript`. L'utilisation de `TypeScript` permet de garder une cohérence avec les autres applications du projet. La librairie `React native` nous permet également d'avoir une base de code commune pour les appareils Android et iOS.
+De plus, beaucoup de librairies tierces sont disponible conjointement à `React native`, afin de facilité grandement le développement de fonctionnalités complexes.
 
 ### 3. API
 
