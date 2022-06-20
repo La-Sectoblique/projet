@@ -67,7 +67,8 @@ Ici, le fichier est rempli avec des valeurs d'exemple.
 Une fois que la commande a rendu la main, les différents services sont disponible à ces URL : 
 - Webapp : `https://<l'URL donné dans le docker compose>`
 - API : `https://api.<l'URL donné dans le docker compose>`
-- Documentation du package NPM : `https://stash.<l'URL donné dans le docker compose>`
+- Documentation du package NPM : `https://doc.<l'URL donné dans le docker compose>`
+- Console Minio : `https://stash.<l'URL donné dans le docker compose>`
 - Postgres : sur l'adresse du serveur sur le port 5432 pour la base de données de production, et sur le port 5433 pour la base de données de test
 
 
