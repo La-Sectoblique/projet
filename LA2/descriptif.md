@@ -14,24 +14,24 @@ Nous avons fait le choix d'écrire ces briques en `TypeScript`, afin d'avoir une
 
 ### 1. Application web
 
-L'application web de Septotrip est l'application permettant de plannifier ses voyages en amont de celui ci.
-Cette application utilise le framework `Angular`, car c'est le framework web avec lequel nous sommes le plus familier.
+L'application web de Septotrip est l'application permettant de planifier ses voyages en amont de celui ci.
+Cette application utilise le framework `Angular`, car c'est le framework web qui nous est le plus familier.
 
 ### 2. Application mobile
 
 L'application mobile de Septotrip est l'application qui va accompagner l'utilisateur au cours de son voyage. 
 Cette application utilise la librairie `React native`, en `TypeScript`. L'utilisation de `TypeScript` permet de garder une cohérence avec les autres applications du projet. La librairie `React native` nous permet également d'avoir une base de code commune pour les appareils Android et iOS.
-De plus, beaucoup de librairies tierces sont disponible conjointement à `React native`, afin de facilité grandement le développement de fonctionnalités complexes.
+De plus, beaucoup de librairies tierces sont disponibles conjointement à `React native`, afin de faciliter grandement le développement de fonctionnalités complexes.
 
 ### 3. API
 
 L'API est l'application qui fait le lien entre les différents clients et qui contient le modèle de données.
-Elle utilise les libraires `express` pour les routes d'API et `sequelize` pour les communications avec la base de données. Nous avons choisi `express` car cette librairie apporte une grande flexibilité dans la gestion des routes et des middlewares. Quand à `sequelize`, nous l'avons utilisé comme ORM car c'est une librairie très utilisé dans l'écosystème JavaScript, et fonctionne bien avec `TypeScript` et la structure de l'API.
+Elle utilise les libraires `express` pour les routes d'API et `sequelize` pour les communications avec la base de données. Nous avons choisi `express` car cette librairie apporte une grande flexibilité dans la gestion des routes et des middlewares. Quand à `sequelize`, nous l'avons utilisé comme ORM car c'est une librairie très utilisée dans l'écosystème JavaScript, et fonctionne bien avec `TypeScript` et la structure de l'API.
 Egalement, afin de faciliter le développement et éviter le code dupliqué, nous avons mis toutes les déclarations de type des modèles dans [un submodule git](https://github.com/La-Sectoblique/septotrip-types) utilisé par le service et l'API.
 
 ### 4. Service NPM
 
-Le service NPM Septotrip est un package NPM contenant tout les appels à l'API. 
-Nous avons utilisé pour cette partie, la librairie `axios` afin de faciliter l'envoi de requête HTTP vers l'API. L'avantage de cette librairie est qu'elle est compatible avec `react native` et avec `angular`.
-Ce package partage aussi le submodule git de déclaration de git, afin que les clients puisse également avoir accès a ces types.   
+Le service NPM Septotrip est un package NPM contenant tous les appels à l'API. 
+Nous avons utilisé pour cette partie, la librairie `axios` afin de faciliter l'envoi de requêtes HTTP vers l'API. L'avantage de cette librairie est qu'elle est compatible avec `react native` et avec `angular`.
+Ce package partage aussi le submodule git de déclaration de git, afin que les clients puissent également avoir accès a ces types.   
 Une documentation du service est disponible [ici](https://doc.septotrip.com).
