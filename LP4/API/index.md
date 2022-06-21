@@ -6,7 +6,7 @@
   - [Sommaire](#sommaire)
   - [Installation d'un environnement de développement](#installation-dun-environnement-de-développement)
     - [Prérequis](#prérequis)
-    - [Installation d'une base de donnée et d'un service de stockage en local](#installation-dune-base-de-donnée-et-dun-service-de-stockage-en-local)
+    - [Installation d'une base de données et d'un service de stockage en local](#installation-dune-base-de-donnée-et-dun-service-de-stockage-en-local)
     - [Clonage du dépôt Github et installation des dépendances](#clonage-du-dépôt-github-et-installation-des-dépendances)
     - [Configuration de l'API](#configuration-de-lapi)
   - [Structure et organisation du code](#structure-et-organisation-du-code)
@@ -19,11 +19,11 @@
 - Node.js 16
 - Docker (recommandé)
 
-### Installation d'une base de donnée et d'un service de stockage en local
+### Installation d'une base de données et d'un service de stockage en local
 
-*Dans cette partie, nous allons voir l'installation de ces élements avec Docker, mais il est également possible d'installer directement PostGres et Minio en local directement, ou d'utiliser un serveur externe avec un service S3 et PostGres d'accessible.*  
+*Dans cette partie, nous allons voir l'installation de ces éléments avec Docker, mais il est également possible d'installer directement PostGres et Minio en local directement, ou d'utiliser un serveur externe avec un service S3 et PostGres d'accessible.*  
 
-Afin de pouvoir développer sur l'API, nous allons commencer par installer les éléments indispensable au fonctionnement de celle ci.  
+Afin de pouvoir développer sur l'API, nous allons commencer par installer les éléments indispensables au fonctionnement de celle ci.  
 Pour cela, assurez vous que le service Docker est lancé. Pour s'en assurer : 
 - Sur Linux, tapez la commande suivante : 
 ```
@@ -42,7 +42,7 @@ docker run -p 5432:5432 --name septodb-dev -e POSTGRES_DB=septoblique-dev -e POS
 docker run -p 9000:9000 -p 9001:9001 -e MINIO_ROOT_USER=api -e MINIO_ROOT_PASSWORD=password -e MINIO_BROWSER_REDIRECT_URL=http://stash.localhost minio/minio server /data --console-address ":9001"
 ```
 
-Si aucune erreur n'est renvoyé, vous avez alors une base de donnée et un service de stockage S3 disponible en local.
+Si aucune erreur n'est renvoyée, vous avez alors une base de données et un service de stockage S3 disponible en local.
 
 ### Clonage du dépôt Github et installation des dépendances
 
@@ -56,10 +56,10 @@ git submodule init
 git submodule update
 ```
 
-Une fois, le projet cloné et complet, installez `yarn` si ce n'est pas déjà fait avec la commande `npm install --global yarn`.   
+Une fois le projet cloné et complet, installez `yarn` si ce n'est pas déjà fait avec la commande `npm install --global yarn`.   
 Installez ensuite les dépendances du projet avec la commande `yarn install`.
 
-Une fois l'installation terminée, tapez la commande `yarn build` pour être sur que tout est installé correctement. 
+Une fois l'installation terminée, tapez la commande `yarn build` pour être sûr que tout est installé correctement. 
 
 ### Configuration de l'API
 
@@ -100,20 +100,20 @@ L'essentiel du code de l'API se trouve dans le dossier `src`. Celui est structur
 
 - controllers
 
-Ce dossier contient tout les controleurs qui détiennent l'essentiel de l'intelligence de l'API. Chaque fichier contient les controleurs d'un item précis (exemple: `Trip.ts` contient les controleurs des voyages).
+Ce dossier contient tous les contrôleurs qui détiennent l'essentiel de l'intelligence de l'API. Chaque fichier contient les contrôleurs d'un item précis (exemple: `Trip.ts` contient les contrôleurs des voyages).
 
 - core
 
-Ce dossier contient tout les éléments de base de l'api, comme les fonctions de connexion à la base de données, par exemple.
+Ce dossier contient tous les éléments de base de l'api, comme les fonctions de connexion à la base de données, par exemple.
 
 - middlewares
   - loaders
 
-Le dossier `middlewares` contient toutes les fonctions qui sont appelé avant les controleurs lors d'un appel sur une route. Le dossier `loaders` contient tout les middlewares qui vont chercher en base une entité en base de données avant que le controleur ne la manipule.
+Le dossier `middlewares` contient toutes les fonctions qui sont appelées avant les contrôleurs lors d'un appel sur une route. Le dossier `loaders` contient tous les middlewares qui vont chercher en base une entité en base de données avant que le contrôleur ne la manipule.
 
 - models
 
-Ce dossier contient tout les modèles de la base de données ainsi que leurs relations entre eux.
+Ce dossier contient tous les modèles de la base de données ainsi que leurs relations entre eux.
 
 - routes
   - protected
