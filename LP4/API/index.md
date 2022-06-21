@@ -22,6 +22,7 @@
 		- [Créer une nouvelle route](#créer-une-nouvelle-route)
 			- [Création d'un contrôleur](#création-dun-contrôleur)
 			- [Création d'un middleware](#création-dun-middleware)
+			- [Création d'une route](#création-dune-route)
 
 ## Installation d'un environnement de développement
 
@@ -350,6 +351,27 @@ La fonction `next` dans les contrôleurs renvoie vers le middleware d'erreur.
 
 #### Création d'un middleware
 
-Pour créer un middleware, créez un fichier dans le dossier `src/middleware` avec un nom correspondant à ce que votre middleware va faire.
+Pour créer un middleware, créez un fichier dans le dossier `src/middlewares` avec un nom correspondant à ce que votre middleware va faire.
 
-La structure est globalement identique à celle d'un contrôleur, excepté 
+La structure est globalement identique à celle d'un contrôleur, excepté qu'à la fin, il est nécessaire d'appeler la fonction `next` pour passer au middleware suivant ou au contrôleur.
+
+Il existe une catégorie spéciale de middleware : les `loaders`. Ils se trouvent dans le dossier `src/middlewares/loaders` et servent à charger une entité avant de la manipuler dans le middleware.
+Il existe un loader par modèle dans la base de données. L'entité chargé sera mise dans l'objet `response.locals`.  
+
+#### Création d'une route
+
+Les routes se trouve dans le dossier `src/routes`. Dedans, il y a les routes publics, qui ne nécessitent aucune authentification (dans le dossier `src/routes/public`) et les routes nécessitant une authentification (dans le dossier `src/routes/protected`).
+
+Chaque fichier de routes exporte un `router` qui contient les routes ainsi que leurs méthodes.
+
+```ts
+router.route("/example")
+	.all(exampleLoader) // loaders
+	.get(getSomething) // controlleurs
+	.post(postSomething)
+	.put(updateSomething)
+	.all(MethodNotAllowed); // On met le middleware "MethodNotAlllowed" à la fin si on souhaite renvoyer une erreur si l'utilisateur essaye de faire un appel avec une méthode HTTP invalide 
+```
+
+Chaque `router` est relié au routeur global qu'on peut retrouver dans le fichier `index.ts` de chaque dossier à l'intérieur du répertoire `src/routes`. 
+
