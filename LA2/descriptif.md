@@ -17,6 +17,13 @@ Nous avons fait le choix d'écrire ces briques en `TypeScript`, afin d'avoir une
 L'application web de Septotrip est l'application permettant de planifier ses voyages en amont de celui ci.
 Cette application utilise le framework `Angular`, car c'est le framework web qui nous est le plus familier.
 
+l'application web de Septotrip permet de planifier ses voyages.
+Elle utilise le framework `Angular`. Il permet un développement stable de part la structure que prend l'application. Il est également le plus connus de nos développeurs front.
+L'application est écrit avec `Typescript` ce qui permet une bien meilleure stabilité. 
+Tout les appels API passent par le service `septoblique-service`, ce qui lui permet de ne pas avoir à s'occuper de la gestion http des appels directement.
+Toutes les données de l'utilisateur tel que les voyages ou les étapes sont gérés avec `NgRx`, une librairie implémentant le pattern Redux, permettant de gérer un état global pour l'application.
+La carte est géré avec Mapbox. Cette librairie de carte permet une grande rapiditée de développement car elle très complète et assez simple d'utilisation.
+
 ### 2. Application mobile
 
 L'application mobile de Septotrip est l'application qui va accompagner l'utilisateur au cours de son voyage. 
